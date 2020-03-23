@@ -1,15 +1,12 @@
 <template>
-  <div class="menuitem">
-    <div class="additem">
-      <button>
-        <img src="../assets/graphics/add.svg" alt="icon add" />
-      </button>
-    </div>
-  </div>
+  <div class="menuitem"></div>
 </template>
 
 <script>
-export default {};
+export default {
+  name: "Menuitem",
+  methods: {}
+};
 </script>
 
 <style scoped>
