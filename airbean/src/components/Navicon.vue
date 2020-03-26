@@ -1,16 +1,35 @@
 <template>
   <div class="Navicon">
-  <img src="@/assets/graphics/navicon.svg" alt="icon">
-  <img src="@/assets/graphics/close.svg" alt="close">
+    <button @click="open">
+  <img src="@/assets/graphics/navicon.svg" alt="icon" width="32px"> 
+  </button>
   </div>
 </template>
 
 <script>
 export default {
-name: 'Navicon'
+name: 'Navicon',
+nav: Boolean,
+methods:{
+  open() {
+    this.$emit("openNav");
+  }
 }
+};
+
 </script>
 
-<style>
+<style scoped>
+button {
+  height: 70px;
+  width: 70px;
+  background-color: white;
+  border-radius: 40px;
+  border: none;
+  margin-right:340px;
+  margin-top:30px;
+  
+}
+
 
 </style>
