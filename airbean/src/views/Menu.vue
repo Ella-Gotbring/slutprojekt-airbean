@@ -1,32 +1,53 @@
 <template>
   <div class="menu">
+    <header>
+    <Navicon v-bind:nav="visible" v-on:openNav="navOpen" />
+   </header>
+   <main>
+    <MenuList v-bind:nav="visible" v-on:closeNav="navClose" />
+    </main>
     <h1>Meny</h1>
     <button v-on:click=" cart +=1">add to cart</button>
     <div class="cart">
       <p>Cart{{cart}}</p>
-    </div>
+    </div> -->
     <ul>
       <!-- <li v-for="item in menu" :key="item.id" :item="item">{{menu}}</li> -->
       <li v-for="item in items" :key="item.id">{{items.menu}}</li>
     </ul>
-  </div>
+  </div> 
 </template>
 
 <script>
 import menu from "../assets/data/menu.json";
 // import Menuitem from "../components/Menuitem";
+import Navicon from "../components/Navicon";
+import MenuList from "../components/MenuList";
 
 export default {
   name: "Menu",
   data() {
     return {
-      items: menu
+      items: menu,
+      visible: true,
     };
   },
   components: {
-    // Menuitem
+    // Menuitem,
+    Navicon,
+    MenuList
   },
-  computed: {}
+  computed: {
+
+  },
+  methods:{
+    navOpen() {
+      this.visible = false;
+    },
+    navClose() {
+      this.visible = true;
+    }
+  }
 };
 </script>
 
@@ -35,5 +56,11 @@ export default {
   border: 2px solid black;
   margin-right: 25px;
   padding: 5px 20px;
+}
+.menu{
+  background-color: rgb(228, 207, 214);
+  width: 500px;
+  height: 100%;
+  margin-left: 350px;
 }
 </style>
