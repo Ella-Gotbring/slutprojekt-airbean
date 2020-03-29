@@ -9,11 +9,14 @@ export default ({
 
     state: {
         menu: [],
-
+        order: {},
     },
     mutations: {
         displayMenu(state, menu) {
             state.menu = menu
+        },
+        orderStatus(state,order){
+            state.order = order
         }
 
     },
@@ -27,6 +30,6 @@ export default ({
 
 
     },
-    modules
+    // modules
 
 })
