@@ -5,13 +5,13 @@
         {{item.title}}
         <span class="dots"></span>
       </h2>
-      <!-- <h4>{{item-price}} </h4> -->
+      <!-- <h4>{{item.price}} </h4> -->
     </div>
 
-    <!-- <p>...........................................</p> -->
+    <p>.............................................................................................</p>
     <h5 class="total">{{totalamount}}</h5>
     <img src="./../assets/graphics/arrow-up.svg" alt="arrowup" @click="increase" />
-    <!-- <h3>{{item.quantity}}</h3> -->
+    <h3>{{item.quantity}}</h3>
     <img src="./../assets/graphics/arrow-down.svg" alt="arrowdown" @click="decrease" />
   </div>
 </template>
@@ -42,10 +42,20 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .item {
   display: flex;
   align-items: flex-end;
   
 }
+.cart-item {
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+img{
+  height: 8px;
+  cursor: pointer;
+}
+
 </style>
