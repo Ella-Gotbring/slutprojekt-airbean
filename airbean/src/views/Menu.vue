@@ -1,5 +1,6 @@
 <template>
   <div class="menu">
+    <img src="../assets/graphics/graphics-header.svg" alt="header" class="head" />
     <header>
       <Navicon v-bind:nav="visible" v-on:openNav="navOpen" />
       <CartBag @click.native="show" />
@@ -8,9 +9,11 @@
       <MenuList v-bind:nav="visible" v-on:closeNav="navClose" />
       <Cart v-if="cartStatus" />
     </main>
+
     <h1>Meny</h1>
     <!-- <Menuitem /> -->
     <Menuitem v-for="item in items" :key="item.id" :item="item" />
+    <img src="../assets/graphics/graphics-footer.svg" alt="footer" class="foot" />
 
     <!-- <li v-for="item in items" :key="item.id" :item="item" /> -->
     <!-- <li v-for="item in menu" :key="item.id" :item="item">{{menu}}</li> -->
@@ -72,5 +75,9 @@ export default {
   width: 500px;
   height: 100%;
   margin-left: 350px;
+}
+.head {
+  width: 500px;
+  /* margin-top: -10px; */
 }
 </style>
