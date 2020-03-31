@@ -21,7 +21,21 @@ export default new Vuex.Store({
             state.order = order
         },
         add(state, item) {
-            state.cart.push(item);
+            state.cart.push({
+                id: item.id,
+                price: item.price,
+                title: item.title,
+                quantity: 1
+            })
+
+        },
+  
+        updateItem(state,id){
+            state.cart.find(item => item.id == id).quantity++;
+        },
+        removeItem(state,id){
+            state.cart.find(item => item.id == id).quantity--;
+
         }
 
     },

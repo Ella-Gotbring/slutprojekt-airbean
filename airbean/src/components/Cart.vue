@@ -7,7 +7,7 @@
         <div class="price">
       <h2>Total</h2>
       <p>...................................................................................................</p>
-      <h2>{{counter}} kr</h2>
+      <h2>{{totalamount}} kr</h2>
       </div>
       <p>inkl moms + drönarleverans</p>
       <button @click="sendOrder">Take My Money</button>
@@ -25,12 +25,12 @@ export default {
       cart(){
         return this.$store.state.cart;
       },
-      counter(){
-         let counter = 0;
+      totalamount(){
+         let totalamount = 0;
          this.$store.state.cart.forEach(item => {
-             counter +=item.quantity * item.price;
+             totalamount +=item.quantity * item.price;
          })
-         return counter;
+         return totalamount;
      
       }
     },
