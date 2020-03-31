@@ -10,13 +10,13 @@
     </main>
     <h1>Meny</h1>
     <!-- <Menuitem /> -->
-    <Menuitem v-for="item in items" :key="item.id" :item="item" />
+    <!-- <Menuitem v-for="item in items" :key="item.id" :item="item" /> -->
 
     <!-- <li v-for="item in items" :key="item.id" :item="item" /> -->
     <!-- <li v-for="item in menu" :key="item.id" :item="item">{{menu}}</li> -->
 
     <!-- this line of code writes out the whole menu string -->
-    <!-- <li v-for="item in items" :key="item.id">{{items}}</li> -->
+    <li v-for="item in items" :key="item.id">{{items}}</li>
   </div>
 </template>
 

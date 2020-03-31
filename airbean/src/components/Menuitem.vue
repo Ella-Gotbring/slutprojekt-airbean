@@ -18,7 +18,7 @@
 export default {
   name: "Menuitem",
   props: {
-    item: Object
+    item: Array
   },
   methods: {
     add() {
