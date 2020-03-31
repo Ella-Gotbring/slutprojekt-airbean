@@ -37,7 +37,8 @@ export default ({
             setTimeout(() => {
                 content.commit('displayMenu', listMenu.menu)
             }, 600)
-        }
+        },
+        
 
 
     },

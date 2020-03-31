@@ -1,16 +1,16 @@
 <template>
   <div class="menuitem">
-    <div class="add" @click="add">
-      <button>
+    <div class="add">
+      <button @click="add">
         <img src="../assets/graphics/add.svg" alt="add" />
       </button>
     </div>
-    <h2 class="itemtitle">
+    <h3 class="itemtitle">
       {{ item.title }}
       <span class="dotted-line"></span>
-    </h2>
+    </h3>
     <p class="itemdesc">{{ item.desc }}</p>
-    <h2 class="itemprice">{{ item.price}} kr</h2>
+    <h3 class="itemprice">{{ item.price}} kr</h3>
   </div>
 </template>
 
@@ -22,7 +22,7 @@ export default {
   },
   methods: {
     add() {
-      this.$store.dispatch("additemTocart", this.item);
+      this.$store.dispatch.additem, this.item;
     }
   }
 };
@@ -45,6 +45,7 @@ export default {
       border-radius: 100%;
       align-items: center;
       justify-content: center;
+      margin-left: 10px;
       display: flex;
       height: 3rem;
       width: 3rem;
@@ -57,14 +58,17 @@ export default {
   .itemtitle {
     grid-column: 2/3;
     grid-row: 1/2;
+    font-size: 1.5rem;
     display: flex;
     margin: 0;
     padding: 0;
 
     .dotted-line {
       display: flex;
+      margin: 15px;
+
       flex: 1;
-      border-bottom: 2px dotted darkgray;
+      border-bottom: 2px dotted rgb(189, 171, 171);
     }
   }
   .itemdesc {
