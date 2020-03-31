@@ -42,10 +42,9 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style>
 .item {
   display: flex;
   align-items: flex-end;
-  
 }
 </style>
