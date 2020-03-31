@@ -27,8 +27,10 @@ button {
   border-radius: 40px;
   border: none;
   margin-right:340px;
-  margin-top:30px;
-  
+  margin-top:20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 

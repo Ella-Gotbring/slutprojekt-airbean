@@ -2,16 +2,11 @@
   <div class="menu">
     <header>
     <Navicon v-bind:nav="visible" v-on:openNav="navOpen" />
-    <CartBag />
+    <CartBag  @click.native="show" />
    </header>
    <main>
     <MenuList v-bind:nav="visible" v-on:closeNav="navClose" />
-    <Cart />
-     <Navicon v-bind:nav="visible" v-on:openNav="navOpen" />
-    </header>
-    <main>
-      <MenuList v-bind:nav="visible" v-on:closeNav="navClose" />
-
+    <Cart v-if="cartStatus" />
     </main>
     <h1>Meny</h1>
     <!-- <Menuitem /> -->
@@ -38,7 +33,8 @@ export default {
   data() {
     return {
       items: menu,
-      visible: true
+      visible: true,
+      cartStatus:false,
     };
   },
   components: {
@@ -52,11 +48,17 @@ export default {
   methods: {
     navOpen() {
       this.visible = false;
+      this.cartStatus = false;
     },
     navClose() {
       this.visible = true;
-    }
-  }
+    },
+
+     show(){
+        this.cartStatus = !this.cartStatus;
+     }
+ }
+
 };
 </script>
 

@@ -1,12 +1,14 @@
 <template>
   <div class="cart">
       <h1>Din beställning</h1>
-      <div v-for='item in cart' :key='item.id'>
+      <div class="item" v-for='item in cart' :key='item.id'>
         <CartItem :item='item' />
         </div>
+        <div class="price">
       <h2>Total</h2>
-      <p>..........................................</p>
+      <p>...................................................................................................</p>
       <h2>{{counter}} kr</h2>
+      </div>
       <p>inkl moms + drönarleverans</p>
       <button @click="sendOrder">Take My Money</button>
   </div>
@@ -24,7 +26,12 @@ export default {
         return this.$store.state.cart;
       },
       counter(){
-        return this.$store.state.counter;
+         let counter = 0;
+         this.$store.state.cart.forEach(item => {
+             counter +=item.quantity * item.price;
+         })
+         return counter;
+     
       }
     },
     methods:{
@@ -36,6 +43,40 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+.cart {
+  width: 50%;
+  min-height: 400px;
+ background-color: white;
+  position: absolute;
+  top: 130px;
+  right: 320px;
+  border-radius: 20px;
+    }
+h1 {
+  margin-top: 50px;
+  font-size: 55px;
+   }
+.price {
+  display: flex;
+  align-items: flex-end;
+  margin-top: 90px;
+  }
+button {
+  width: 400px;
+  background-color: black;
+  color: white;
+  font-size: 40px;
+  border-radius: 50px;
+  letter-spacing: 2px;           
+   }
+p {
+  text-align: left;
+  margin: 5px;
+}
+h2 {
+  font-size: 35px;
+  margin: 0;
+  }
+        
 </style>
