@@ -1,6 +1,6 @@
 <template>
   <div class="menuitem">
-    
+    <!-- <img src="../assets/graphics/graphics-header.svg" alt="header" class="header" /> -->
     <div class="add">
       <button @click="add">
         <img src="../assets/graphics/add.svg" alt="add" />
@@ -19,7 +19,7 @@
 export default {
   name: "Menuitem",
   props: {
-    item: Array
+    item: Object
   },
   methods: {
     add() {
