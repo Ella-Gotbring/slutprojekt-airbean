@@ -19,6 +19,15 @@ export default ({
         },
         orderStatus(state,order){
             state.order = order
+        },
+        add(state,item){
+            state.cart.push({
+                id:item.id,
+                price:item.price,
+                title:item.title,
+                quantity:1
+
+            })
         }
 
     },
