@@ -2,15 +2,15 @@
   <div class="menuitem">
     <div class="add" @click="add">
       <button>
-        <img src="../assets/graphics/add.svg" alt="add" />
+        <img src="add.svg" alt="add" />
       </button>
     </div>
     <h2 class="itemtitle">
-      {{item.title}}
+      {{ item.title }}
       <span class="dotted-line"></span>
     </h2>
-    <p class="itemdesc">{{item.desc}}</p>
-    <h2 class="itemprice">{{item.price}}</h2>
+    <p class="itemdesc">{{ item.desc }}</p>
+    <h2 class="itemprice">{{ item.price}}</h2>
   </div>
 </template>
 
@@ -21,12 +21,15 @@ export default {
     item: Object
   },
   methods: {
-    // add() {
-    //   this.$store.dispatch("additemTocart", this.item);
-    // }
+    add() {
+      this.$store.dispatch("additemTocart", this.item);
+    }
   }
 };
 </script>
 
 <style scoped>
+.button {
+  background-color: black;
+}
 </style>

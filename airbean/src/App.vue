@@ -1,9 +1,18 @@
 <template>
   <div id="app">
-    
-    <router-view/>
+    <router-view />
   </div>
 </template>
+<script>
+export default {
+  name: "App",
+  computed: {
+    // beforemount() {
+    //   this.$store.dispatch("getlistMenu");
+    // }
+  }
+};
+</script>
 
 <style>
 #app {
