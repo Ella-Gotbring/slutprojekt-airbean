@@ -5,7 +5,7 @@ import listMenu from '../assets/data/menu.json'
 Vue.use(Vuex)
 
 
-export default ({
+export default new Vuex.Store({
 
     state: {
         menu: [],
@@ -32,9 +32,9 @@ export default ({
                 content.commit('displayMenu', listMenu.menu)
             }, 600)
         },
-        additemTocart(context, item) {
-            context.commit("add", item)
-        }
+        // additemTocart(context, item) {
+        //     context.commit("add", item)
+        // }
 
 
 
