@@ -1,10 +1,17 @@
 <template>
   <div class="menu">
     <header>
-      <Navicon v-bind:nav="visible" v-on:openNav="navOpen" />
+    <Navicon v-bind:nav="visible" v-on:openNav="navOpen" />
+    <CartBag />
+   </header>
+   <main>
+    <MenuList v-bind:nav="visible" v-on:closeNav="navClose" />
+    <Cart />
+     <Navicon v-bind:nav="visible" v-on:openNav="navOpen" />
     </header>
     <main>
       <MenuList v-bind:nav="visible" v-on:closeNav="navClose" />
+
     </main>
     <h1>Meny</h1>
     <!-- <Menuitem /> -->
@@ -23,6 +30,8 @@ import menu from "../assets/data/menu.json";
 import Menuitem from "../components/Menuitem";
 import Navicon from "../components/Navicon";
 import MenuList from "../components/MenuList";
+import CartBag from "../components/CartBag";
+import Cart from "../components/Cart";
 
 export default {
   name: "Menu",
@@ -35,7 +44,9 @@ export default {
   components: {
     Menuitem,
     Navicon,
-    MenuList
+    MenuList,
+    CartBag,
+    Cart,
   },
   computed: {},
   methods: {

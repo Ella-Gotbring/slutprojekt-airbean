@@ -10,6 +10,8 @@ export default ({
     state: {
         menu: [],
         order: {},
+        cart: [],
+        counter: 0
     },
     mutations: {
         displayMenu(state, menu) {
