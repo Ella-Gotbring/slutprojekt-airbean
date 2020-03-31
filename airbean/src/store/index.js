@@ -17,17 +17,11 @@ export default ({
         displayMenu(state, menu) {
             state.menu = menu
         },
-        orderStatus(state,order){
+        orderStatus(state, order) {
             state.order = order
         },
-        add(state,item){
-            state.cart.push({
-                id:item.id,
-                price:item.price,
-                title:item.title,
-                quantity:1
-
-            })
+        add(state, item) {
+            state.cart.push(item);
         }
 
     },
@@ -38,7 +32,10 @@ export default ({
                 content.commit('displayMenu', listMenu.menu)
             }, 600)
         },
-        
+        additemTocart(context, item) {
+            context.commit("add", item)
+        }
+
 
 
     },

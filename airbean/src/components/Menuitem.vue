@@ -7,7 +7,7 @@
     </div>
     <h3 class="itemtitle">
       {{ item.title }}
-      <span class="dotted-line"></span>
+      <div class="dotted-line"></div>
     </h3>
     <p class="itemdesc">{{ item.desc }}</p>
     <h3 class="itemprice">{{ item.price}} kr</h3>
@@ -22,11 +22,12 @@ export default {
   },
   methods: {
     add() {
-      this.$store.dispatch.additem, this.item;
+      this.$store.commit("add", this.item);
     }
   }
 };
 </script>
+//  this.$store.dispatch.additemTocart, { item: this.item, quantity: 1 };
 
 <style lang ="scss">
 .menuitem {
@@ -39,6 +40,7 @@ export default {
     display: flex;
     grid-column: 1/2;
     grid-row: 1/2;
+    margin-top: -33px;
 
     button {
       background: black;
@@ -65,18 +67,20 @@ export default {
 
     .dotted-line {
       display: flex;
-      margin: 15px;
-
+      margin-bottom: 25px;
       flex: 1;
       border-bottom: 2px dotted rgb(189, 171, 171);
     }
   }
   .itemdesc {
     display: flex;
+
+    /* position: relative; */
     font-size: 20px;
     grid-row: 2/3;
     grid-column: 2/3;
-    padding: 0;
+    padding: 0px;
+
     margin: 0;
   }
   .itemprice {
