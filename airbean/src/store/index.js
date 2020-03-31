@@ -5,7 +5,7 @@ import listMenu from '../assets/data/menu.json'
 Vue.use(Vuex)
 
 
-export default ({
+export default new Vuex.Store({
 
     state: {
         menu: [],
@@ -17,8 +17,11 @@ export default ({
         displayMenu(state, menu) {
             state.menu = menu
         },
-        orderStatus(state,order){
+        orderStatus(state, order) {
             state.order = order
+        },
+        add(state, item) {
+            state.cart.push(item);
         }
 
     },
@@ -28,7 +31,11 @@ export default ({
             setTimeout(() => {
                 content.commit('displayMenu', listMenu.menu)
             }, 600)
-        }
+        },
+        // additemTocart(context, item) {
+        //     context.commit("add", item)
+        // }
+
 
 
     },
