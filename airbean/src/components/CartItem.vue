@@ -36,7 +36,11 @@ export default {
     },
     decrease() {
       // this.store.state.counter--;
+      if(this.item.quantity>1){
       this.item.quantity--;
+    }else{
+      this.$store.commit('removeItem', this.item.id)
+    }
     }
   }
 };

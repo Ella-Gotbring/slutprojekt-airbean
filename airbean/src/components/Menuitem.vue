@@ -19,11 +19,11 @@
 export default {
   name: "Menuitem",
   props: {
-    item: Array
+    item: Object
   },
   methods: {
     add() {
-      this.$store.commit("add", this.item);
+      this.$store.dispatch("addToCart", this.item);
     }
   }
 };

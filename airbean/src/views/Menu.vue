@@ -23,7 +23,7 @@
     <!-- <li v-for="item in menu" :key="item.id" :item="item">{{menu}}</li> -->
 
     <!-- this line of code writes out the whole menu string -->
-    <li v-for="item in items" :key="item.id">{{items}}</li>
+    <!-- <li v-for="item in items" :key="item.id">{{items}}</li> -->
   </div>
 </template>
 
@@ -51,7 +51,11 @@ export default {
     CartBag,
     Cart
   },
-  computed: {},
+  computed: {
+    menu(){
+      return this.$store.state.menu;
+    },
+  },
   methods: {
     navOpen() {
       this.visible = false;
