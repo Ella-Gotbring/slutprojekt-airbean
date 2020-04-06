@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import listMenu from '../assets/data/menu.json'
-
+// import axios from 'axios'
+// const API = 'http://localhost:5000/api/beans'
 Vue.use(Vuex)
 
 
@@ -11,6 +12,7 @@ export default new Vuex.Store({
         menu: [],
         order: {},
         cart: [],
+        loading: true,
         counter: 0
     },
     mutations: {
@@ -29,11 +31,11 @@ export default new Vuex.Store({
             })
 
         },
-  
-        updateItem(state,id){
+
+        updateItem(state, id) {
             state.cart.find(item => item.id == id).quantity++;
         },
-        removeItem(state,id){
+        removeItem(state, id) {
             state.cart.find(item => item.id == id).quantity--;
 
         }
