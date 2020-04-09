@@ -1,6 +1,6 @@
 function generateOrderNr() {
-    let letters = ['X', 'Y', 'Z'];
-    return `AB${Date.now()}${letters[Math.floor(Math.random() * letters.length)]}`;
+    let letters = ['X','Y','Z' ];
+    return `AB${Date.now()}${letters[Math.floor(Math.random()*letters.length)]}`;
 }
 
 function generateETA() {

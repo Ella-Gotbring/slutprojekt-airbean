@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import listMenu from '../assets/data/menu.json'
-// import axios from 'axios'
-// const API = 'http://localhost:5000/api/beans'
+
+import axios from 'axios'
+const API = 'http://localhost:5000/api/beans'
 Vue.use(Vuex)
 
 
@@ -10,6 +11,7 @@ export default new Vuex.Store({
 
     state: {
         menu: [],
+        activeOrder: {},
         order: {},
         cart: [],
         loading: true,
@@ -51,6 +53,22 @@ export default new Vuex.Store({
         // additemTocart(context, item) {
         //     context.commit("add", item)
         // }
+        async makeOrder(context) {
+            console.log('brewing')
+            let order = {
+                items: context.state.cart
+            }
+            try {
+                context.state.load = true
+                let resp = await axios.post(`${API}/order/`, order)
+                console.log(resp)
+                context.state.load = false
+                context.commit('orderStatus', resp.data)
+            } catch (err) {
+                console.log(err)
+                console.log('something went wrong')
+            }
+        }
 
 
 

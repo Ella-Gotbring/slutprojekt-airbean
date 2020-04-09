@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
 
 router.post('/order', async (req, res) => {
     const order = {
-        eta: generateETA,
+        eta: generateETA(),
         orderNr: generateOrderNr(),
     }
 
