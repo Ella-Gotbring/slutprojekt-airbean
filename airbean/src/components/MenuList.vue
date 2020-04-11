@@ -1,7 +1,7 @@
 <template>
   <div class="menulist" @click="hidden" :class="{ close : nav }">
     <button>
-      <img  src="@/assets/graphics/close.svg" alt="close" width="32px">
+      <img  src="@/assets/graphics/close.svg" alt="close" width="20px">
       </button>
     <router-link class="link" to="/menu">Meny</router-link>
     <hr />
@@ -34,18 +34,18 @@ methods: {
   position: absolute;
   display: flex;
   flex-direction: column;
-  font-size:40px;
+  font-size:30px;
    top: 0;
    left: 0;
    right: 0;
    bottom: 0;
    background-color: black;
-   width: 520px;
-   margin-left: 350px;
+   /* width: 520px;
+   margin-left: 350px; */
 }
 button{
-  height: 70px;
-  width: 70px;
+  height: 40px;
+  width: 40px;
   background-color: white;
   border-radius: 40px;
   border: none;
@@ -59,8 +59,9 @@ color: white;
 }
 hr{
   color:rgb(207, 191, 191);
-  width: 70px;
-
+  width: 100px;
+  margin-left:36%;
+  margin-top:20px;
 }
 .close {
   display: none;

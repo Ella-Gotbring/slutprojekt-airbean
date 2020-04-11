@@ -13,16 +13,17 @@ export default {
 </script>
 <style scoped>
 .home {
-  height: 594px;
-  width: 500px;
+  height: 100vh;
+  /* width: 500px; */
   background-image: url("./../assets/graphics/intro-graphic-left.svg"),
     url("./../assets/graphics/intro-graphic-right.svg");
   background-color: rgb(75, 158, 133);
   background-repeat: no-repeat;
   background-position: top left, top right;
+  background-size: auto 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 350px;
+  /* margin-left: 350px; */
 }
 </style>
