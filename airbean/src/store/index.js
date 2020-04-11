@@ -14,7 +14,7 @@ export default new Vuex.Store({
         activeOrder: {},
         order: {},
         cart: [],
-        loading: true,
+        load: false,
         counter: 0
     },
     mutations: {
@@ -22,7 +22,7 @@ export default new Vuex.Store({
             state.menu = menu
         },
         orderStatus(state, order) {
-            state.order = order
+            state.activeOrder = order;
         },
         add(state, item) {
             state.cart.push({
@@ -53,10 +53,11 @@ export default new Vuex.Store({
         // additemTocart(context, item) {
         //     context.commit("add", item)
         // }
-        async makeOrder(context) {
+
+        async sendOrder(context) {
             console.log('brewing')
             let order = {
-                items: context.state.cart
+                item: context.state.cart
             }
             try {
                 context.state.load = true

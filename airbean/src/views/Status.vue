@@ -1,13 +1,9 @@
 <template>
   <div class="status">
-    <div class="load" v-if="load">
-      <img src="../assets/graphics/loader.png" alt="loading icon" />
-    </div>
-    <h1 v-if="load">Brewing</h1>
-    <!-- <p v-if="order.orderNr">Ditt Ordernummer är {{order.orderNr}}</p>
-    <img v-if="order.orderNr" src="@/assets/graphics/drone.svg" alt="drone" />
-    <h1 v-if="order.orderNr">Din beställning är på väg!</h1>
-    <p v-if="order.orderNr">{{order.eta}} minuter</p>-->
+    <img v-if="loading" src="../assets/graphics/loader.png" alt="loading icon" />
+
+    <h1 v-if="loading">Brewing</h1>
+
     <h1 class="orderNumber" v-if="order.orderNr">
       Ordernumber:
       <strong>#{{order.orderNr}}</strong>
@@ -32,8 +28,8 @@ export default {
     order() {
       return this.$store.state.activeOrder;
     },
-    load() {
-      return this.$store.state.loading;
+    loading() {
+      return this.$store.state.load;
     }
   }
 };
