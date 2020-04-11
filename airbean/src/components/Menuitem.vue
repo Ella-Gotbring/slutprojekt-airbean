@@ -50,18 +50,19 @@ export default {
       justify-content: center;
       margin-left: 10px;
       display: flex;
-      height: 3rem;
-      width: 3rem;
+      height: 1.5rem;
+      width: 1.5rem;
+      margin-top:50px;
     }
     img {
-      width: 25px;
+      width: 15px;
     }
   }
 
   .itemtitle {
     grid-column: 2/3;
     grid-row: 1/2;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     display: flex;
     margin: 0;
     padding: 0;
@@ -77,7 +78,7 @@ export default {
     display: flex;
 
     /* position: relative; */
-    font-size: 20px;
+    font-size: 15px;
     grid-row: 2/3;
     grid-column: 2/3;
     padding: 0px;

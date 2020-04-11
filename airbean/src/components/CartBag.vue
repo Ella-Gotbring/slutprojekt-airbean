@@ -34,13 +34,14 @@ export default {
 
 <style scoped>
 button {
-  height: 70px;
-  width: 70px;
+  height: 40px;
+  width: 40px;
   background-color: black;
   border-radius: 40px;
   border: none;
-  margin-top:-70px;
-  margin-left:350px;
+  margin-top:-35px;
+  margin-right:30px;
+  float:right;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,12 +49,15 @@ button {
 }
 .number{
     background-color: orange;
-    width: 40px;
-    height: 30px;
+    width: 23px;
+    height: 23px;
     color: white;
     border-radius: 50px;
-    padding-top:10px;
-    margin-left:410px;
+    margin-left:308px;
+    margin-top:-40px;
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 </style>
