@@ -103,6 +103,6 @@ export default {
   font-size: 15px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   color: white;
-  padding-top: 22px;
+  padding-top: 20px;
 }
 </style>
