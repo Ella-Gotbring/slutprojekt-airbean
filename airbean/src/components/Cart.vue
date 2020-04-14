@@ -44,34 +44,21 @@ export default {
 
 <style scoped>
 .cart {
-  width: 50%;
-  min-height: 400px;
-  background-color: white;
-  position: absolute;
-  top: 130px;
-  right: 320px;
-
   background-color: white;
   position: fixed;
-  top: 85px;
+  top:85px;
   left: 35px;
-
   border-radius: 20px;
-}
+    }
 h1 {
-  margin-top: 50px;
-  font-size: 55px;
-}
-
-/* text-align: center;
-margin-top:10px; */
-/* } */
-
+text-align: center;
+margin-top:10px;
+   }
 .price {
   display: flex;
   align-items: flex-end;
   margin-top: 90px;
-}
+  }
 button {
   width: 90%;
   height: 40px;
@@ -81,27 +68,19 @@ button {
   margin: 2rem 1rem;
   font-size: 20px;
   border-radius: 50px;
-
-  letter-spacing: 2px;
-}
-
-/* letter-spacing: 3px; 
+  letter-spacing: 3px; 
   justify-content: center;
   align-items: center;          
-   } */
-
+   }
 p {
   text-align: left;
   margin: 5px;
 }
 h2 {
-  font-size: 35px;
-  margin: 0;
-}
-/* 
   display:flex;
   justify-content:center;
   align-items:center;
   margin:5px;
-  } */
+  }
+  
 </style>

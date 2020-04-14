@@ -43,8 +43,9 @@ export default new Vuex.Store({
             state.cart.find(item => item.id == id).quantity++;
         },
 
-        // removeItem(state, id) {
-        //     state.cart.find(item => item.id == id).quantity--;
+        removeItem(state, id) {
+            state.cart.find(item => item.id == id);
+        },
 
         //     removeItem(state, id); {
         //         state.cart.find(item => item.id == id);
@@ -89,6 +90,7 @@ export default new Vuex.Store({
                 console.log(err)
                 console.log('something went wrong')
             }
+            context.state.cart =[]
             context.commit("emptyCart")
         }
 
