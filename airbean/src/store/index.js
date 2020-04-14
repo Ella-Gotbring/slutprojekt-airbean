@@ -46,56 +46,57 @@ export default new Vuex.Store({
         removeItem(state, id) {
             state.cart.find(item => item.id == id).quantity--;
 
-        removeItem(state,id){
-            state.cart.find(item => item.id == id);
+            removeItem(state, id); {
+                state.cart.find(item => item.id == id);
+
+
+            }
+            emptyCart(state); {
+                state.cart = [];
+            }
+
 
 
         },
-        emptyCart(state) {
-            state.cart = [];
-        }
+        actions: {
+            async getlistMenu(context) {
 
-        
+                setTimeout(() => {
+                    context.commit('displayMenu', listMenu.menu)
+                }, 600)
+            },
+            addToCart(context, item) {
+                // context.commit("add", item)
+                let checkItem = context.state.cart.filter(check => check.id === item.id)
 
-    },
-    actions: {
-        async getlistMenu(context) {
+                if (checkItem.length > 0) {
+                    context.commit('updateItem', checkItem[0].id)
+                } else {
+                    context.commit('add', item)
+                }
+            },
 
-            setTimeout(() => {
-                context.commit('displayMenu', listMenu.menu)
-            }, 600)
+            async sendOrder(context) {
+                console.log('brewing')
+                let order = {
+                    item: context.state.cart
+                }
+                try {
+                    context.state.load = true
+                    let resp = await axios.post(`${API}/order/`, order)
+                    console.log(resp)
+                    context.state.load = false
+                    context.commit('orderStatus', resp.data)
+                } catch (err) {
+                    console.log(err)
+                    console.log('something went wrong')
+                }
+            }
+
+
+
         },
-        addToCart(context, item) {
-            // context.commit("add", item)
-            let checkItem = context.state.cart.filter(check => check.id === item.id)
-
-            if (checkItem.length > 0) {
-              context.commit('updateItem', checkItem[0].id)
-            } else {
-              context.commit('add', item)
-            }
-        }
-
-        async sendOrder(context) {
-            console.log('brewing')
-            let order = {
-                item: context.state.cart
-            }
-            try {
-                context.state.load = true
-                let resp = await axios.post(`${API}/order/`, order)
-                console.log(resp)
-                context.state.load = false
-                context.commit('orderStatus', resp.data)
-            } catch (err) {
-                console.log(err)
-                console.log('something went wrong')
-            }
-        }
 
 
-
-    },
-
-
+    }
 })
