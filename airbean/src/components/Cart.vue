@@ -44,7 +44,6 @@ export default {
 
 <style scoped>
 .cart {
-
   width: 50%;
   min-height: 400px;
   background-color: white;
@@ -52,23 +51,21 @@ export default {
   top: 130px;
   right: 320px;
 
-  
   background-color: white;
   position: fixed;
-  top:85px;
+  top: 85px;
   left: 35px;
 
   border-radius: 20px;
 }
 h1 {
-
   margin-top: 50px;
   font-size: 55px;
 }
 
-text-align: center;
+/* text-align: center;
 margin-top:10px;
-   }
+   } */
 
 .price {
   display: flex;
@@ -88,26 +85,23 @@ button {
   letter-spacing: 2px;
 }
 
-  letter-spacing: 3px; 
+/* letter-spacing: 3px; 
   justify-content: center;
   align-items: center;          
-   }
+   } */
 
 p {
   text-align: left;
   margin: 5px;
 }
 h2 {
-
   font-size: 35px;
   margin: 0;
 }
 
-  display:flex;
+/* display:flex;
   justify-content:center;
   align-items:center;
   margin:5px;
-  }
-        
-
+  } */
 </style>
