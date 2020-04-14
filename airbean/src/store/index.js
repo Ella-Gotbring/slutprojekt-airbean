@@ -51,11 +51,9 @@ export default new Vuex.Store({
 
 
         //     }
-        //     emptyCart(state); {
-        //         state.cart = [];
-        //     }
-
-
+            emptyCart(state) {
+                state.cart = [];
+            }
 
     },
     actions: {
@@ -91,6 +89,7 @@ export default new Vuex.Store({
                 console.log(err)
                 console.log('something went wrong')
             }
+            context.commit("emptyCart")
         }
 
 
