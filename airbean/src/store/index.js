@@ -46,14 +46,14 @@ export default new Vuex.Store({
         removeItem(state, id) {
             state.cart.find(item => item.id == id).quantity--;
 
-            removeItem(state, id); {
-                state.cart.find(item => item.id == id);
+            // removeItem(state, id); {
+            //     state.cart.find(item => item.id == id);
 
 
-            }
-            emptyCart(state); {
-                state.cart = [];
-            }
+            // }
+            // emptyCart(state); {
+            //     state.cart = [];
+            // }
 
 
 
