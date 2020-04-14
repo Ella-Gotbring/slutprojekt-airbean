@@ -1,6 +1,6 @@
 <template>
   <div class="menu">
-    <img src="../assets/graphics/graphics-header.svg" alt="header" class="head" />
+    <!-- <img src="../assets/graphics/graphics-header.svg" alt="header" class="head" /> -->
     <header>
       <Navicon v-bind:nav="visible" v-on:openNav="navOpen" />
       <CartBag @click.native="show" />
@@ -14,7 +14,7 @@
     <!-- <Menuitem /> -->
 
     <Menuitem v-for="item in items" :key="item.id" :item="item" />
-    <img src="../assets/graphics/graphics-footer.svg" alt="footer" class="foot" />
+    <!-- <img src="../assets/graphics/graphics-footer.svg" alt="footer" class="foot" /> -->
 
     <!-- <Menuitem v-for="item in items" :key="item.id" :item="item" /> -->
 
@@ -23,7 +23,7 @@
     <!-- <li v-for="item in menu" :key="item.id" :item="item">{{menu}}</li> -->
 
     <!-- this line of code writes out the whole menu string -->
-    <li v-for="item in items" :key="item.id">{{items}}</li>
+    <!-- <li v-for="item in items" :key="item.id">{{items}}</li> -->
   </div>
 </template>
 
@@ -51,7 +51,11 @@ export default {
     CartBag,
     Cart
   },
-  computed: {},
+  computed: {
+    menu(){
+      return this.$store.state.menu;
+    },
+  },
   methods: {
     navOpen() {
       this.visible = false;
@@ -68,20 +72,25 @@ export default {
 };
 </script>
 
-<style>
-.cart {
+<style scoped>
+/* .cart {
   border: 2px solid black;
   margin-right: 25px;
   padding: 5px 20px;
-}
+} */
 .menu {
-  background-color: rgb(228, 207, 214);
-  width: 500px;
-  height: 100%;
-  margin-left: 350px;
+  height: 130vh;
+  width: 100%;
+  padding: 1rem 1rem;
+  box-sizing: border-box;
+  background-image: url('../assets/graphics/graphics-header.svg'), url('../assets/graphics/graphics-footer.svg');
+  background-repeat: no-repeat,no-repeat;
+  background-position: top center , bottom center;
+  background-size: 100%, 100%;
+  
 }
-.head {
-  width: 500px;
-  /* margin-top: -10px; */
+h1{
+  font-size: 1.5rem;
+  margin-top: 1rem;
 }
 </style>

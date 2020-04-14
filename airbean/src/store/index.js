@@ -14,8 +14,12 @@ export default new Vuex.Store({
         activeOrder: {},
         order: {},
         cart: [],
+
         load: false,
         counter: 0
+
+        // counter: 0
+
     },
     mutations: {
         displayMenu(state, menu) {
@@ -25,6 +29,7 @@ export default new Vuex.Store({
             state.activeOrder = order;
         },
         add(state, item) {
+            //  state.cart.find(item => item.id == id).quantity++;
             state.cart.push({
                 id: item.id,
                 price: item.price,
@@ -37,22 +42,39 @@ export default new Vuex.Store({
         updateItem(state, id) {
             state.cart.find(item => item.id == id).quantity++;
         },
+
         removeItem(state, id) {
             state.cart.find(item => item.id == id).quantity--;
 
+        removeItem(state,id){
+            state.cart.find(item => item.id == id);
+
+
+        },
+        emptyCart(state) {
+            state.cart = [];
         }
+
+        
 
     },
     actions: {
-        async getlistMenu(content) {
+        async getlistMenu(context) {
 
             setTimeout(() => {
-                content.commit('displayMenu', listMenu.menu)
+                context.commit('displayMenu', listMenu.menu)
             }, 600)
         },
-        // additemTocart(context, item) {
-        //     context.commit("add", item)
-        // }
+        addToCart(context, item) {
+            // context.commit("add", item)
+            let checkItem = context.state.cart.filter(check => check.id === item.id)
+
+            if (checkItem.length > 0) {
+              context.commit('updateItem', checkItem[0].id)
+            } else {
+              context.commit('add', item)
+            }
+        }
 
         async sendOrder(context) {
             console.log('brewing')
@@ -74,6 +96,6 @@ export default new Vuex.Store({
 
 
     },
-    // modules
+
 
 })
